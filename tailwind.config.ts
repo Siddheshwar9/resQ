@@ -22,6 +22,17 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
+        },
+        emergency: {
+          DEFAULT: "hsl(var(--emergency))",
+          foreground: "hsl(var(--emergency-foreground))",
+          hover: "hsl(var(--emergency-hover))",
+        },
+        safe: {
+          DEFAULT: "hsl(var(--safe))",
+          foreground: "hsl(var(--safe-foreground))",
+          hover: "hsl(var(--safe-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -80,10 +91,49 @@ export default {
             height: "0",
           },
         },
+        "pulse-glow": {
+          "0%, 100%": {
+            boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
+          },
+          "50%": {
+            boxShadow: "0 0 30px hsl(var(--primary) / 0.6)",
+          },
+        },
+        "slide-up": {
+          "0%": {
+            transform: "translateY(20px)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
+        "emergency-pulse": {
+          "0%, 100%": {
+            boxShadow: "0 0 15px hsl(var(--emergency) / 0.4)",
+          },
+          "50%": {
+            boxShadow: "0 0 25px hsl(var(--emergency) / 0.7)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "slide-up": "slide-up 0.3s ease-out",
+        "emergency-pulse": "emergency-pulse 1.5s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "ocean-gradient": "var(--ocean-gradient)",
+        "emergency-gradient": "var(--emergency-gradient)",
+        "dashboard-bg": "var(--dashboard-bg)",
+      },
+      boxShadow: {
+        "ocean": "var(--shadow-ocean)",
+        "emergency": "var(--shadow-emergency)",
+        "card": "var(--shadow-card)",
       },
     },
   },
