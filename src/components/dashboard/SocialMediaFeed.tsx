@@ -35,7 +35,7 @@ const mockPosts: SocialPost[] = [
     verified: true
   },
   {
-    id: "2", 
+    id: "2",
     platform: "instagram",
     author: "beach_lover",
     content: "The water just went crazy here! Flooding everywhere on the boardwalk. Stay safe everyone! 🌊⚠️",
@@ -90,12 +90,12 @@ const getSentimentColor = (sentiment: string) => {
 export function SocialMediaFeed() {
   const [filter, setFilter] = useState<string>("all");
 
-  const filteredPosts = mockPosts.filter(post => 
+  const filteredPosts = mockPosts.filter(post =>
     filter === "all" || post.sentiment === filter || post.hazardKeywords.includes(filter)
   );
 
   return (
-    <Card className="h-[600px] shadow-card">
+    <Card className="max-h-[600px] shadow-card">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-1.5">
@@ -117,8 +117,8 @@ export function SocialMediaFeed() {
           </div>
         </div>
       </CardHeader>
-      <CardContent className="h-full overflow-hidden">
-        <div className="space-y-4 h-full overflow-y-auto pr-2">
+      <CardContent className="overflow-y-auto pr-2 space-y-3 max-h-[520px]">
+        <div className="space-y-3 h-full overflow-y-auto pr-2">
           {filteredPosts.map((post, index) => (
             <div
               key={post.id}
@@ -148,11 +148,10 @@ export function SocialMediaFeed() {
                   <Badge
                     key={keyword}
                     variant="secondary"
-                    className={`text-xs ${
-                      ["tsunami", "warning", "urgent", "evacuate"].includes(keyword)
+                    className={`text-xs ${["tsunami", "warning", "urgent", "evacuate"].includes(keyword)
                         ? "bg-emergency/20 text-emergency"
                         : "bg-primary/20 text-primary"
-                    }`}
+                      }`}
                   >
                     {keyword}
                   </Badge>
@@ -184,11 +183,11 @@ export function SocialMediaFeed() {
                   <span className={`text-xs font-medium ${getSentimentColor(post.sentiment)}`}>
                     {post.sentiment}
                   </span>
-                  {post.hazardKeywords.some(keyword => 
+                  {post.hazardKeywords.some(keyword =>
                     ["tsunami", "warning", "urgent", "evacuate"].includes(keyword)
                   ) && (
-                    <AlertTriangle className="w-4 h-4 text-emergency animate-emergency-pulse" />
-                  )}
+                      <AlertTriangle className="w-4 h-4 text-emergency animate-emergency-pulse" />
+                    )}
                 </div>
               </div>
             </div>
