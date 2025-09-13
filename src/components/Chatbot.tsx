@@ -23,7 +23,7 @@ export default function Chatbot() {
 
     // Example bot reply
     setTimeout(() => {
-      setMessages((prev) => [...prev, { text: "The backend is not deployed.", user: false }]);
+      setMessages((prev) => [...prev, { text: "The backend is not deployed yet.", user: false }]);
     }, 500);
   };
 
