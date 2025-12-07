@@ -68,9 +68,9 @@ ResQ empowers communities and emergency agencies with real-time hazard monitorin
 ## 🤝 Contributors
 
 * Siddheshwar Pandey
-* Pragya
-* Anurag
-* Vishesh
+* Pragya Soni
+* Anurag Ray
+* Vishesh Singh
 
 ---
 
